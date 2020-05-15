@@ -14,11 +14,10 @@ TEST_CASE("empty_string")
     REQUIRE(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("isogram_with_only_lower_case_characters")
 {
     const bool actual = isogram::is_isogram("isogram");
-    
+
     const bool expected {true};
 
     REQUIRE(expected == actual);
@@ -81,7 +80,7 @@ TEST_CASE("hypothetical_isogrammic_word_with_hyphen")
 TEST_CASE("hypothetical_word_with_duplicated_character_following_hyphen")
 {
     const bool actual = isogram::is_isogram("thumbscrew-jappingly");
-    
+
     const bool expected {false};
 
     REQUIRE(expected == actual);
@@ -122,5 +121,3 @@ TEST_CASE("same_first_and_last_characters")
 
     REQUIRE(expected == actual);
 }
-
-#endif
