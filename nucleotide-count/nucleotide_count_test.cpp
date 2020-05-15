@@ -65,7 +65,6 @@ TEST_CASE("validates_nucleotides_on_construction")
     REQUIRE_THROWS_AS(nucleotide_count::counter("GGTTGGX"), std::invalid_argument);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("counts_all_nucleotides")
 {
     const nucleotide_count::counter dna("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC");
@@ -75,4 +74,3 @@ TEST_CASE("counts_all_nucleotides")
 
     REQUIRE(expected == actual);
 }
-#endif

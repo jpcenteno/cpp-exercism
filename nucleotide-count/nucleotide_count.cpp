@@ -1,14 +1,20 @@
+#include <algorithm>
+
 #include "nucleotide_count.h"
 
 namespace nucleotide_count {
 
-    bool is_valid_nucleotide(const char c) {
-        return c == 'A' or c == 'T' or c == 'C' or c == 'G';
+    void assert_valid_nucleotide(const char c) {
+        if (c != 'A' and c != 'T' and c != 'C' and c != 'G') {
+            throw std::invalid_argument("invalid nucleotide");
+        }
     }
 
-    counter::counter(const std::string str)
-        : _nucleotideCounts(str.begin(), str.end()) {
-
+    counter::counter(const std::string str) {
+        for (const char c : str) {
+            assert_valid_nucleotide(c);
+            _nucleotideCounts.insert(c);
+        }
     }
 
     const std::map<char, int> counter::nucleotide_counts() const {
@@ -21,13 +27,8 @@ namespace nucleotide_count {
     }
 
     unsigned int counter::count(char nucleotide) const {
-
-        if (not is_valid_nucleotide(nucleotide)) {
-            throw std::invalid_argument("invalid nucleotide");
-        }
-
+        assert_valid_nucleotide(nucleotide);
         return _nucleotideCounts.count(nucleotide);
-
     }
 
 }  // namespace nucleotide_count
