@@ -9,10 +9,11 @@ namespace isogram {
         std::set<char> seenChars;
 
         for (char c : str) {
-            if (not isalpha(c)) continue;
-            c = tolower(c);
-            if (seenChars.find(c) != seenChars.end()) return false;
-            seenChars.insert(c);
+            if ( isalpha(c) ) {
+                const auto res = seenChars.insert( tolower(c) );
+                const bool wasInserted = res.second;
+                if ( not wasInserted ) return false;
+            }
         }
 
         return true;
