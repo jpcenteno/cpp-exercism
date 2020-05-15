@@ -2,6 +2,7 @@
 #define NUCLEOTIDE_COUNT_H
 
 #include <map>
+#include <set>
 #include <string>
 
 namespace nucleotide_count {
@@ -11,13 +12,13 @@ namespace nucleotide_count {
 
         counter(const std::string);
 
-        const std::map<char, int>& nucleotide_counts() const;
+        const std::map<char, int> nucleotide_counts() const;
 
         unsigned int count(char) const;
 
     private:
 
-        std::map<char, int> _nucleotideCounts;
+        std::multiset<char> _nucleotideCounts;
 
     };
 

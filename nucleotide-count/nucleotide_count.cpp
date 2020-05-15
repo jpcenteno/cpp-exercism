@@ -3,11 +3,11 @@
 namespace nucleotide_count {
 
     counter::counter(const std::string) {
-
     }
 
-    const std::map<char, int>& counter::nucleotide_counts() const {
-        return _nucleotideCounts;
+    const std::map<char, int> counter::nucleotide_counts() const {
+        std::map<char, int> out;
+        return out;
     }
 
     unsigned int counter::count(char) const {
