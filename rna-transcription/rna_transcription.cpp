@@ -2,4 +2,8 @@
 
 namespace rna_transcription {
 
+    char to_rna(const char) {
+        return 0;
+    }
+
 }  // namespace rna_transcription

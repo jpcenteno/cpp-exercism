@@ -3,6 +3,8 @@
 
 namespace rna_transcription {
 
+    char to_rna(const char);
+
 }  // namespace rna_transcription
 
 #endif // RNA_TRANSCRIPTION_H
