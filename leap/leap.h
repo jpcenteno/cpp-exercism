@@ -3,7 +3,7 @@
 
 namespace leap {
 
-    bool is_leap_year(const unsigned int);
+    bool is_leap_year(const int);
 
 }  // namespace leap
 
