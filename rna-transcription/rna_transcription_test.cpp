@@ -21,9 +21,7 @@ TEST_CASE("transcribes_thymidine_to_adenosine")
     REQUIRE('A' == rna_transcription::to_rna('T'));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("transcribes_all_dna_nucleotides_to_their_rna_complements")
 {
     REQUIRE("UGCACCAGAAUU" == rna_transcription::to_rna("ACGTGGTCTTAA"));
 }
-#endif
