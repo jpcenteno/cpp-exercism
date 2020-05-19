@@ -14,7 +14,7 @@ namespace grade_school {
 
         map<int, vector<string>> roster() const;
 
-        void add(string, int);
+        void add(const string student_name, const int grade);
 
         vector<string> grade(const int grade) const;
 

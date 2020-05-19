@@ -2,11 +2,10 @@
 
 namespace grade_school {
 
-    /** Insert `item` into `vec` in order. Assumes that `vec` is sorted. */
+    /** Insert `item` into a sorted vector in order. */
     template< typename T >
     typename std::vector<T>::iterator
-    insert_sorted(std::vector<T> &vec, T const& item)
-    {
+    insert_sorted(std::vector<T> &vec, T const& item) {
         // First element from iterator where `item < other_element`.
         const auto upper_bound_it =
             std::upper_bound(vec.begin(), vec.end(), item);
@@ -18,13 +17,16 @@ namespace grade_school {
         return this->_roster;
     }
 
-    void school::add(const string student_name, const int grade_num) {
+    void school::add(const string student_name, const int grade) {
 
-        // Ensure there is a vector for the grade number.
-        auto fixme = _roster.insert({grade_num, vector<string>()});
-        // The iterator that points to the course students vector should be
-        // returned anyways.
-        vector<string> &course_students = fixme.first->second;
+        /* Method `std::map::insert` inserts an element into the container, if
+         * the container doesn't already contain an element with the same key.
+         * This ensures that there's always a vector with the roster for that
+         * grade.  */
+        map<int, vector<string>>::iterator it =
+            _roster.insert({grade, vector<string>()}).first;
+
+        vector<string> &course_students = it->second;
 
         insert_sorted(course_students, student_name);
 
