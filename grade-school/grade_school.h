@@ -14,8 +14,12 @@ namespace grade_school {
 
         map<int, vector<string>> roster() const;
 
+        void add(string, int);
 
     private:
+
+        map<int, vector<string>> _roster;
+
     };
 
 }  // namespace grade_school

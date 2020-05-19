@@ -10,7 +10,6 @@ TEST_CASE("a_new_school_has_an_empty_roster")
     REQUIRE(school_.roster().empty());
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("adding_a_student_adds_them_to_the_roster_for_the_given_grade")
 {
     grade_school::school school_;
@@ -47,6 +46,7 @@ TEST_CASE("adding_students_to_different_grades_adds_them_to_the_roster")
     REQUIRE(expected == actual);
 }
 
+#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("grade_returns_the_students_in_that_grade_in_alphabetical_order")
 {
     grade_school::school school_;
