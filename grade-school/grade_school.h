@@ -16,6 +16,8 @@ namespace grade_school {
 
         void add(string, int);
 
+        vector<string> grade(const int grade) const;
+
     private:
 
         map<int, vector<string>> _roster;

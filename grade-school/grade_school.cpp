@@ -30,4 +30,13 @@ namespace grade_school {
 
     }
 
+    vector<string> school::grade(const int grade) const {
+        auto it = this->_roster.find(grade);
+        if (it != this->_roster.end()) {
+            return it->second;
+        } else {
+            return vector<string>();
+        }
+    }
+
 }  // namespace grade_school
