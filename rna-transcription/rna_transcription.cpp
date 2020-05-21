@@ -5,16 +5,18 @@
 namespace rna_transcription {
 
     char to_rna(const char nucleotide) {
-        if (nucleotide == 'C') {
-            return 'G';
-        } else if (nucleotide == 'G') {
-            return 'C';
-        } else if (nucleotide == 'A') {
-            return 'U';
-        } else if (nucleotide == 'T') {
-            return 'A';
+
+        switch (nucleotide) {
+
+            case 'C': return 'G';
+            case 'G': return 'C';
+            case 'A': return 'U';
+            case 'T': return 'A';
+
+            default: throw std::domain_error("Invalid Nucleotide");
+
         }
-        return 0;
+
     }
 
     std::string to_rna(std::string sequence) {
