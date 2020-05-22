@@ -9,22 +9,8 @@ namespace robot_name {
     std::uniform_int_distribution<> letter_distribution(0, 'Z' - 'A');
     std::uniform_int_distribution<> digit_distribution(0, 9);
 
-    std::string generate_name() {
-
-        std::string name;
-
-        name.push_back('A' + letter_distribution(gen));
-        name.push_back('A' + letter_distribution(gen));
-        name.push_back('0' + digit_distribution(gen));
-        name.push_back('0' + digit_distribution(gen));
-        name.push_back('0' + digit_distribution(gen));
-
-        return name;
-
-    }
-
     robot::robot() {
-        _name = generate_name();
+        reset();
     }
 
     std::string robot::name() const {
@@ -32,7 +18,14 @@ namespace robot_name {
     }
 
     void robot::reset() {
-        _name = generate_name();
+
+        _name = "";
+        _name.push_back('A' + letter_distribution(gen));
+        _name.push_back('A' + letter_distribution(gen));
+        _name.push_back('0' + digit_distribution(gen));
+        _name.push_back('0' + digit_distribution(gen));
+        _name.push_back('0' + digit_distribution(gen));
+
     }
 
 }  // namespace robot_name
