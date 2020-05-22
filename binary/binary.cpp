@@ -21,17 +21,10 @@ namespace binary {
             return 0;
         }
 
-        std::string::size_type n = binary.size();
-        std::uint64_t out = 0;
-
-        for (std::string::size_type i = 0; i < n; ++i) {
-            const char c = binary[n - i - 1];
-            if (c == '1') {
-                out = out | (1 << i);
-            }
-        }
-
-        return out;
+        return std::accumulate(binary.begin(), binary.end(), 0,
+            [](std::uint64_t acc, char c){
+                return (acc << 1) | ( c == '1' ? 1 : 0);
+            });
 
     }
 
