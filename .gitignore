@@ -33,3 +33,7 @@
 
 # Cmake build dir
 build/
+cmake-build-debug/
+
+# Editor config files
+.idea/
