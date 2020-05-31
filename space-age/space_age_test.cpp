@@ -8,7 +8,6 @@ TEST_CASE("age_in_seconds")
     REQUIRE(age.seconds() == 1000000);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 namespace
 {
 const double accuracy = 0.005;
@@ -23,6 +22,7 @@ TEST_CASE("age_in_earth_years")
     REQUIRE(age.on_earth() == Approx(31.69).margin(accuracy));
 }
 
+#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("age_in_mercury_years")
 {
     const space_age::space_age age(2134835688);

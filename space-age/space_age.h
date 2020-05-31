@@ -8,9 +8,18 @@ namespace space_age {
     class space_age {
 
     public:
+
+        // Constructors:
+
         space_age(std::uint64_t earth_age_in_seconds);
 
+        // Accessors:
+
         std::uint64_t seconds() const;
+
+        // Age on planets:
+
+        double on_earth() const;
 
     private:
 
