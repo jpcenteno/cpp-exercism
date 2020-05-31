@@ -2,14 +2,14 @@
 
 namespace space_age {
 
-    constexpr double seconds_in_earth_year = 31557600.0;
+    constexpr double seconds_per_earth_year = 31557600.0;
 
-    constexpr double orbital_period_mercury = 0.2408467;
-    constexpr double orbital_period_venus = 0.61519726;
-    constexpr double orbital_period_mars = 1.8808158;
-    constexpr double orbital_period_jupiter = 11.862615;
-    constexpr double orbital_period_saturn = 29.447498;
-    constexpr double orbital_period_uranus = 84.016846;
+    constexpr double orbital_period_mercury =   0.2408467;
+    constexpr double orbital_period_venus   =   0.61519726;
+    constexpr double orbital_period_mars    =   1.8808158;
+    constexpr double orbital_period_jupiter =  11.862615;
+    constexpr double orbital_period_saturn  =  29.447498;
+    constexpr double orbital_period_uranus  =  84.016846;
     constexpr double orbital_period_neptune = 164.79132;
 
     // Constructors:
@@ -26,7 +26,7 @@ namespace space_age {
     // Age in planets:
 
     double space_age::on_earth() const {
-        return _earth_age_in_seconds / seconds_in_earth_year;
+        return _earth_age_in_seconds / seconds_per_earth_year;
     }
 
     double space_age::on_mercury() const {
